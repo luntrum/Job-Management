@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.container {
+  width: 30rem;
+  max-width: 30rem;
+  margin: auto;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  border: 3px solid gray;
+  border-radius: 15px;
+  background-color: aliceblue;
+  padding: 10px;
+}
+header {
+  font-size: 50px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.job-input {
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+#job-title,
+#job-description {
+  /* margin-top: 20px; */
+  padding: 20px;
+  text-align: left;
+  font-size: large;
+}
+
+.job-input label {
+  font-size: large;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.job-input button {
+  font-size: large;
+  color: red;
+  background-color: bisque;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-radius: 15px;
+}
+h3 {
+  margin: auto;
+  margin-bottom: 2px;
+  padding: 0;
+}
+.filter-input {
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.jobs-list {
+  width: 30rem;
+  max-width: 30rem;
+
+  margin: auto;
+}
+.job-item {
+  max-width: 100%;
+  border: 5px solid lightseagreen;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  background-color: azure;
+}
+.job-title {
+  font-size: 20px;
+  margin: 20px 0 10px 20px;
+  font-weight: bold;
+}
+.job-description,
+.job-completed {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 0;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.job-description {
+  white-space: pre-wrap;
+  text-indent: -3px;
+  overflow-wrap: break-word;
+}
+.item-btn button {
+  padding: 5px 40px;
+  border: 1px solid grey;
+  border-radius: 50px;
+  text-align: center;
+  margin: 0 5px;
+  justify-content: center;
+  cursor: pointer;
+}
+.item-btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+textarea {
+  width: 85%;
+  height: 20vh;
+  resize: vertical;
+}
