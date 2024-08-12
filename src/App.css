@@ -39,9 +39,13 @@ header {
 #job-title,
 #job-description {
   /* margin-top: 20px; */
+  width: 80%;
+  max-width: 100%;
   padding: 20px;
+  margin: 10px;
   text-align: left;
   font-size: large;
+  border: 1px solid black;
 }
 
 .job-input label {
@@ -84,6 +88,7 @@ h3 {
   flex-direction: column;
   margin-top: 10px;
   background-color: azure;
+  padding: 5px;
 }
 .job-title {
   font-size: 20px;
@@ -104,11 +109,12 @@ h3 {
   overflow-wrap: break-word;
 }
 .item-btn button {
-  padding: 5px 40px;
+  width: 100%;
+  padding: 5px 20px;
   border: 1px solid grey;
-  border-radius: 50px;
+  border-radius: 15px;
   text-align: center;
-  margin: 0 5px;
+  margin: auto;
   justify-content: center;
   cursor: pointer;
 }
@@ -125,4 +131,46 @@ textarea {
   width: 85%;
   height: 20vh;
   resize: vertical;
+}
+.filter-input div {
+  display: inline;
+  /* flex-direction: row; */
+  align-items: center;
+  /* justify-content: center; */
+}
+h4 {
+  margin-bottom: 5px;
+}
+
+@media only screen  and (min-width: 430px) and (max-width: 530px) {
+  .container {
+    max-width: 15rem;
+  }
+  #job-title,
+  #job-description {
+    max-width: 70%;
+  }
+
+  .jobs-list {
+    max-width: 15rem;
+  }
+  header {
+    font-size: 20px;
+    max-width: max-content;
+  }
+  .filter-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .filter-input div {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center; /* Căn giữa theo trục dọc giữa input và label */
+  }
+
+  .filter-input label {
+    margin-left: 5px; /* Khoảng cách giữa input và label */
+  }
 }

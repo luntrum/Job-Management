@@ -5,17 +5,14 @@ export const JobProvider = ({ children }) => {
   const [oldJobs, setOldJobs] = useState([]);
 
   const addJobs = (value) => {
-    
-        let newJob = {
-          id: jobs.length + 1,
-          jobTitle: value.title,
-          jobDescription: value.description,
-          completed: false,
-        };
-        setJobs([...jobs, newJob]);
-        setOldJobs([...oldJobs, newJob]);
-
-   
+    let newJob = {
+      id: jobs.length + 1,
+      jobTitle: value.title,
+      jobDescription: value.description,
+      completed: false,
+    };
+    setJobs([...jobs, newJob]);
+    setOldJobs([...oldJobs, newJob]);
   };
 
   const handleChangeJobStatusBtn = (id) => {
