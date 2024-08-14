@@ -1,0 +1,36 @@
+
+.filter-input {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter-input div {
+    display: inline;
+    /* flex-direction: row; */
+    align-items: center;
+    /* justify-content: center; */
+  }
+  h4 {
+  margin-bottom: 5px;
+}
+@media only screen and (min-width: 380px) and (max-width: 530px) {
+   
+    .filter-input {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .filter-input div {
+      display: flex;
+      /* flex-direction: column; */
+      align-items: center; /* Căn giữa theo trục dọc giữa input và label */
+    }
+  
+    .filter-input label {
+      margin-left: 5px; /* Khoảng cách giữa input và label */
+    }
+  }
+  

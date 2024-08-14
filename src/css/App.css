@@ -1,0 +1,82 @@
+
+.container {
+  width: 30rem;
+  max-width: 30rem;
+  margin: auto;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  border: 3px solid gray;
+  border-radius: 15px;
+  background-color: aliceblue;
+  padding: 10px;
+}
+header {
+  font-size: 50px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.job-input {
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+#job-title,
+#job-description {
+  /* margin-top: 20px; */
+  width: 80%;
+  max-width: 100%;
+  padding: 20px;
+  margin: 10px;
+  text-align: left;
+  font-size: large;
+  border: 1px solid black;
+}
+
+.job-input label {
+  font-size: large;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.job-input button {
+  font-size: large;
+  color: red;
+  background-color: bisque;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-radius: 15px;
+}
+h3 {
+  margin: auto;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+textarea {
+  width: 85%;
+  height: 20vh;
+  resize: vertical;
+}
+
+
+
+@media only screen and (min-width: 380px) and (max-width: 530px) {
+  .container {
+    max-width: 15rem;
+  }
+
+  header {
+    font-size: 20px;
+    max-width: max-content;
+  }
+ 
+}

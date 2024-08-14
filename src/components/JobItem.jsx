@@ -32,8 +32,9 @@ function JobItem({ job }) {
       <p className="job-title">{job.jobTitle}</p>
       <pre className="job-description"> {job.jobDescription} </pre>
       <p className="job-due-date">{dueDate.toLocaleDateString()}</p>
+      <p className="job-priority">{job.priority}</p>
       <p className="job-status">{jobStatus}</p>
-      {isNearDue && !job.completed && (
+      {isNearDue && !job.completed && !isOverDue && (
         <p className="notification">This job is due in the next 3 days!</p>
       )}
       <div className="item-btn">
