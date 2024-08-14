@@ -3,12 +3,13 @@ import { JobContext } from './JobContext';
 export const JobProvider = ({ children }) => {
   const [jobs, setJobs] = useState([]);
   const [oldJobs, setOldJobs] = useState([]);
-
+  
   const addJobs = (value) => {
     let newJob = {
       id: jobs.length + 1,
       jobTitle: value.title,
       jobDescription: value.description,
+      dueDate:value.dueDate,
       completed: false,
     };
     setJobs([...jobs, newJob]);

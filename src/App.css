@@ -80,6 +80,7 @@ h3 {
 
   margin: auto;
 }
+/* Single Job */
 .job-item {
   max-width: 100%;
   border: 5px solid lightseagreen;
@@ -90,13 +91,28 @@ h3 {
   background-color: azure;
   padding: 5px;
 }
+.job-item.overdue {
+  background-color: red;
+  color: white;
+  border-color: red;
+}
+.job-item.completed {
+  background-color: aquamarine;
+  border-color: aquamarine;
+}
+.job-item.neardue {
+  background-color: pink;
+  border-color: pink;
+}
 .job-title {
   font-size: 20px;
   margin: 20px 0 10px 20px;
   font-weight: bold;
 }
 .job-description,
-.job-completed {
+.job-status,
+.job-due-date,
+.notification {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 0;
