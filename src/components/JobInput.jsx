@@ -6,11 +6,14 @@ function JobInput() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [dueDate, setDueDate] = useState(null);
-  const [priority, setPriority] = useState('low');
+  const [priority, setPriority] = useState('Low');
+  const [category, setCategory] = useState('Private');
+
   const titleInputRef = useRef(null);
   const descriptionInputRef = useRef(null);
   const dueDateRef = useRef(null);
   const prioRef = useRef(null);
+  const categoryRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,15 +32,17 @@ function JobInput() {
         description: description.trim(),
         dueDate: dueDate,
         priority: priority,
+        category: category,
       });
 
       setTitle('');
       setDescription('');
       setDueDate(null);
       setPriority('Low');
-      prioRef.current.value = 'Low';
       titleInputRef.current.focus();
       dueDateRef.current.value = '';
+      prioRef.current.value = 'Low';
+      categoryRef.current.value='Private'
     }
   };
 
@@ -98,6 +103,17 @@ function JobInput() {
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
           <option value="High">High</option>
+        </select>
+        <label htmlFor="category">Category:</label>
+        <select
+          name="category"
+          id="category"
+          onChange={(e) => setCategory(e.target.value)}
+          ref={categoryRef}
+        >
+          <option value="Private">Private</option>
+          <option value="Social">Social</option>
+          <option value="Company">Company</option>
         </select>
         <button type="submit" onClick={handleSubmit}>
           Submit

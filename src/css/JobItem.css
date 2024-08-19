@@ -45,6 +45,16 @@
   margin-left: 20px;
   margin-top: 5px;
 }
+.notification {
+  border: 5px solid brown;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+  padding: 10px;
+  margin: 10px 0px;
+}
 .job-description {
   white-space: pre-wrap;
   text-indent: -3px;

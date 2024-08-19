@@ -29,14 +29,17 @@ function JobItem({ job }) {
 
   return (
     <div className={itemClass}>
-      <p className="job-title">{job.jobTitle}</p>
-      <pre className="job-description"> {job.jobDescription} </pre>
-      <p className="job-due-date">{dueDate.toLocaleDateString()}</p>
-      <p className="job-priority">{job.priority}</p>
-      <p className="job-status">{jobStatus}</p>
+      <p className="job-title">Title: {job.jobTitle}</p>
       {isNearDue && !job.completed && !isOverDue && (
-        <p className="notification">This job is due in the next 3 days!</p>
+        <p className="notification">
+          This job need to be finished in the next 3 days!
+        </p>
       )}
+      <p className="job-priority">Category: {job.category}</p>
+      <p className="job-priority">Priority: {job.priority}</p>
+      <pre className="job-description">Description: {job.jobDescription} </pre>
+      <p className="job-due-date">Due Date: {dueDate.toLocaleDateString()}</p>
+      <p className="job-status">Status: {jobStatus}</p>
       <div className="item-btn">
         <button
           className="change-status"

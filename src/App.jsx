@@ -6,6 +6,7 @@ import JobList from './components/JobList';
 import JobInput from './components/JobInput';
 import Header from './components/JobHeader';
 import JobSortByDue from './components/JobSortByDue';
+import JobFind from './components/JobFind';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <div className="container">
         <JobInput />
+        <JobFind />
         <JobFilter />
         <JobSortByDue />
       </div>
