@@ -41,16 +41,32 @@ textarea {
   height: 10vh;
   resize: vertical;
 }
-.find-btn {
-  width: 85%;
+.find-btn,
+.finish-find-btn {
+  width: 90%;
   padding: 10px;
   font-size: 2vh;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
-  margin: auto;
   border: none;
   background-color: bisque;
   cursor: pointer;
   border-radius: 50px;
   color: red;
+}
+
+@media only screen and (min-width: 380px) and (max-width: 530px) {
+  .job-find {
+    margin-left: 0;
+    width: 90%;
+  }
+  .find-btn,
+  .finish-find-btn {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
 }

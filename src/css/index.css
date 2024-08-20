@@ -6,3 +6,6 @@ body {
   justify-content: center;
   align-self: center;
 }
+button:hover {
+  background-color: rgb(254, 189, 109);
+}

@@ -55,9 +55,12 @@ header {
   font-size: large;
   color: red;
   background-color: bisque;
-  margin: 10px 0;
+  margin: auto;
+  margin-top: 15px;
   padding: 10px 0;
-  border-radius: 15px;
+  border-radius: 50px;
+  width: 90%;
+  border: none;
 }
 h3 {
   margin: auto;
