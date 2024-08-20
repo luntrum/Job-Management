@@ -45,7 +45,7 @@ textarea {
 .finish-find-btn {
   width: 90%;
   padding: 10px;
-  font-size: 2vh;
+  font-size: large;
   margin: auto;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -65,8 +65,11 @@ textarea {
   }
   .find-btn,
   .finish-find-btn {
-    margin-left: 30px;
+    width: 90%;
+    margin: auto;
+    /* align-items: center; */
+    margin-left: 10%;
+
     margin-bottom: 10px;
-    cursor: pointer;
   }
 }
