@@ -9,7 +9,7 @@ function JobItem({ job }) {
   // dueDate.setHours(0, 0, 0, 0);
 
   const isOverDue = dueDate && dueDate < today;
-  let itemClass = 'job-item';
+  let itemBackground = 'bg-amber-200';
   let jobStatus = 'Pending';
 
   const threeDateLater = new Date(today);
@@ -17,37 +17,46 @@ function JobItem({ job }) {
   const isNearDue = dueDate && dueDate <= threeDateLater;
   // setup Status of job
   if (job.completed) {
-    itemClass = 'job-item completed';
+    itemBackground = 'bg-emerald-400';
     jobStatus = 'Completed';
   } else if (isOverDue) {
-    itemClass = 'job-item overdue';
+    itemBackground = 'bg-red-600';
     jobStatus = 'OverDue';
   } else if (isNearDue) {
-    itemClass = 'job-item neardue';
+    itemBackground = 'bg-pink-200';
   }
   ///set up near duedate notification
 
   return (
-    <div className={itemClass}>
-      <p className="job-title">Title: {job.jobTitle}</p>
+    <div
+      className={` mx-5 my-3 rounded-xl 
+        ${itemBackground} px-5 py-3`}
+    >
+      <p className="font-bold">Title: {job.jobTitle}</p>
       {isNearDue && !job.completed && !isOverDue && (
         <p className="notification">
           This job need to be finished in the next 3 days!
         </p>
       )}
-      <p className="job-priority">Category: {job.category}</p>
-      <p className="job-priority">Priority: {job.priority}</p>
-      <pre className="job-description">Description: {job.jobDescription} </pre>
-      <p className="job-due-date">Due Date: {dueDate.toLocaleDateString()}</p>
-      <p className="job-status">Status: {jobStatus}</p>
-      <div className="item-btn">
+      <p>Category: {job.category}</p>
+      <p>Priority: {job.priority}</p>
+      <p>Due Date: {dueDate.toLocaleDateString()}</p>
+      <p>Status: {jobStatus}</p>
+      <pre className="italic">
+        Description:
+        <p className="not-italic">{job.jobDescription}</p>
+      </pre>
+      <div className="flex justify-center ">
         <button
-          className="change-status"
+          className={`mr-5 border-2 border-slate-800 p-2 rounded-xl hover:opacity-20`}
           onClick={() => handleChangeJobStatusBtn(job.id)}
         >
           Change status
         </button>
-        <button className="delete-btn" onClick={() => handleDeleteBtn(job.id)}>
+        <button
+          className={` ml-5 border-2 border-slate-800 py-3 px-10 rounded-xl  hover:opacity-20 `}
+          onClick={() => handleDeleteBtn(job.id)}
+        >
           delete
         </button>
       </div>

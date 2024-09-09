@@ -42,7 +42,7 @@ function JobInput() {
       titleInputRef.current.focus();
       dueDateRef.current.value = '';
       prioRef.current.value = 'Low';
-      categoryRef.current.value='Private'
+      categoryRef.current.value = 'Private';
     }
   };
 
@@ -59,31 +59,39 @@ function JobInput() {
   };
 
   return (
-    <div className="job-input">
-      <form className="job-input">
-        <label htmlFor="job-title">Job title</label>
+    <div className=" bg-amber-200 py-2 m-5 rounded-xl border-gray-600 justify-center align-middle   ">
+      <form className="flex flex-col mx-10 my-5 ">
+        <label className="mb-1 mt-5 font-bold  " htmlFor="job-title">
+          Job title
+        </label>
         <input
           type="text"
           value={title}
           id="job-title"
           name="job-title"
           placeholder="Job title"
+          className="py-5 text-center focus:text-left "
           onChange={(e) => setTitle(e.target.value)}
           onKeyDown={handleKeyDown}
           ref={titleInputRef}
         />
-        <label htmlFor="job-description">Job description</label>
+        <label className="mb-1 mt-5 font-bold " htmlFor="job-description">
+          Job description
+        </label>
         <textarea
           type="text"
           value={description}
           id="job-description"
           name="job-description"
           placeholder="Job description"
+          className="py-10 text-center focus:text-left"
           onChange={(e) => setDescription(e.target.value)}
           onKeyDown={handleKeyDown}
           ref={descriptionInputRef}
         />
-        <label htmlFor="job-due-date">Due Date:</label>
+        <label className="mb-1 mt-5 font-bold " htmlFor="job-due-date">
+          Due Date:
+        </label>
         <input
           type="date"
           name="dueDate"
@@ -93,10 +101,13 @@ function JobInput() {
           onKeyDown={handleKeyDown}
           ref={dueDateRef}
         />
-        <label htmlFor="priority">Priority:</label>
+        <label className="mb-1 mt-5 font-bold " htmlFor="priority">
+          Priority:
+        </label>
         <select
           name="priority"
           id="priority"
+          className="focus:w-5/6"
           onChange={(e) => setPriority(e.target.value)}
           ref={prioRef}
         >
@@ -104,10 +115,13 @@ function JobInput() {
           <option value="Medium">Medium</option>
           <option value="High">High</option>
         </select>
-        <label htmlFor="category">Category:</label>
+        <label className="mb-1 mt-5 font-bold " htmlFor="category">
+          Category:
+        </label>
         <select
           name="category"
           id="category"
+          className="focus:w-5/6"
           onChange={(e) => setCategory(e.target.value)}
           ref={categoryRef}
         >
@@ -115,7 +129,11 @@ function JobInput() {
           <option value="Social">Social</option>
           <option value="Company">Company</option>
         </select>
-        <button type="submit" onClick={handleSubmit}>
+        <button
+          type="submit"
+          className="mt-5 bg-amber-600 rounded-2xl py-2 hover:bg-amber-400 font-bold"
+          onClick={handleSubmit}
+        >
           Submit
         </button>
       </form>

@@ -5,7 +5,7 @@ function JobList() {
   const { jobs } = useContext(JobContext);
 
   return (
-    <div className="jobs-list">
+    <div className="flex flex-col">
       {jobs.map((job) => (
         <JobItem key={job.id} job={job} />
       ))}
