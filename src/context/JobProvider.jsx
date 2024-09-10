@@ -85,7 +85,7 @@ export const JobProvider = ({ children }) => {
       dueDate: value.dueDate,
       priority: value.priority,
       category: value.category,
-      completed: false,
+      status: value.status,
     };
     setJobs([...jobs, newJob]);
     setOldJobs([...oldJobs, newJob]);
@@ -104,17 +104,43 @@ export const JobProvider = ({ children }) => {
 
   /////handle Item
   const handleChangeJobStatusBtn = (id) => {
+    const today = new Date();
+
     setJobs(
-      jobs.map((job) =>
-        job.id === id ? { ...job, completed: !job.completed } : job,
-      ),
+      jobs.map((job) => {
+        if (job.id === id) {
+          return {
+            ...job,
+            status:
+              job.status !== 'completed'
+                ? 'completed'
+                : job.dueDate && job.dueDate < today
+                ? 'overdue'
+                : 'pending',
+          };
+        }
+        return job;
+      }),
     );
+
     setOldJobs(
-      oldJobs.map((job) =>
-        job.id === id ? { ...job, completed: !job.completed } : job,
-      ),
+      oldJobs.map((job) => {
+        if (job.id === id) {
+          return {
+            ...job,
+            status:
+              job.status !== 'completed'
+                ? 'completed'
+                : job.dueDate && job.dueDate < today
+                ? 'overdue'
+                : 'pending',
+          };
+        }
+        return job;
+      }),
     );
   };
+
   const handleDeleteBtn = (id) => {
     setJobs(jobs.filter((job) => job.id !== id));
     setOldJobs(oldJobs.filter((job) => job.id !== id));
@@ -140,11 +166,7 @@ export const JobProvider = ({ children }) => {
     let filteredJobs = [...oldJobs];
     /// Filter with job status
     if (filter.status !== 'All') {
-      filteredJobs = filteredJobs.filter((job) =>
-        filter.status.toLowerCase() === 'completed'
-          ? job.completed
-          : !job.completed,
-      );
+      filteredJobs = filteredJobs.filter((job) => job.status === filter.status);
     }
     ///filter with priority
     if (filter.priority !== 'All') {

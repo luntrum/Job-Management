@@ -50,7 +50,7 @@ function JobFilter() {
       </h2>
       <div
         className={`    bg-amber-200 mx-5 flex flex-col rounded-b-xl    ${
-          isOpenFilter ? 'animate-open-menu' : 'animate-close-menu '
+          isOpenFilter ? 'animate-close-menu' : 'animate-open-menu '
         } ${isHiddenFilter ? 'hidden' : ' '}    `}
       >
         <form className="ml-5 my-2">
@@ -71,20 +71,30 @@ function JobFilter() {
               type="radio"
               name="status"
               id="completed"
-              value="Completed"
+              value="completed"
               onChange={(e) => setStatusCase(e.target.value)}
             />
-            <label htmlFor="Completed">Completed</label>
+            <label htmlFor="completed">Completed</label>
           </div>
           <div>
             <input
               type="radio"
               name="status"
-              id="inCompleted"
-              value="inCompleted"
+              id="pending"
+              value="pending"
               onChange={(e) => setStatusCase(e.target.value)}
             />
-            <label htmlFor="inCompleted">Incompleted</label>
+            <label htmlFor="pending">Pending</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="status"
+              id="overdue"
+              value="overdue"
+              onChange={(e) => setStatusCase(e.target.value)}
+            />
+            <label htmlFor="overdue">Over Due</label>
           </div>
         </form>
         <div className="ml-5 my-2 flex flex-col">

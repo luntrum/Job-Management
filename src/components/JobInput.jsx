@@ -17,6 +17,7 @@ function JobInput() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!title || !description || !dueDate) {
       alert('please fill every things');
       if (!title) {
@@ -27,12 +28,15 @@ function JobInput() {
         dueDateRef.current.focus();
       }
     } else {
+      const today = new Date();
+      const status = dueDate && dueDate < today ? 'overdue' : 'pending';
       addJobs({
         title: title,
         description: description.trim(),
         dueDate: dueDate,
         priority: priority,
         category: category,
+        status: status,
       });
 
       setTitle('');

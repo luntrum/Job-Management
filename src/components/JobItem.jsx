@@ -8,20 +8,16 @@ function JobItem({ job }) {
   today.setHours(0, 0, 0, 0);
   // dueDate.setHours(0, 0, 0, 0);
 
-  const isOverDue = dueDate && dueDate < today;
   let itemBackground = 'bg-amber-200';
-  let jobStatus = 'Pending';
 
   const threeDateLater = new Date(today);
   threeDateLater.setDate(today.getDate() + 3);
   const isNearDue = dueDate && dueDate <= threeDateLater;
   // setup Status of job
-  if (job.completed) {
+  if (job.status === 'completed') {
     itemBackground = 'bg-emerald-400';
-    jobStatus = 'Completed';
-  } else if (isOverDue) {
+  } else if (job.status === 'overdue') {
     itemBackground = 'bg-red-600';
-    jobStatus = 'OverDue';
   } else if (isNearDue) {
     itemBackground = 'bg-pink-200';
   }
@@ -33,15 +29,15 @@ function JobItem({ job }) {
         ${itemBackground} px-5 py-3`}
     >
       <p className="font-bold">Title: {job.jobTitle}</p>
-      {isNearDue && !job.completed && !isOverDue && (
-        <p className="notification">
+      {isNearDue && job.status !== 'completed' && job.status !== 'overdue' && (
+        <p className="font-bold text-red-700 text-xl md:text-3xl  ">
           This job need to be finished in the next 3 days!
         </p>
       )}
       <p>Category: {job.category}</p>
       <p>Priority: {job.priority}</p>
       <p>Due Date: {dueDate.toLocaleDateString()}</p>
-      <p>Status: {jobStatus}</p>
+      <p>Status: {job.status}</p>
       <pre className="italic">
         Description:
         <p className="not-italic">{job.jobDescription}</p>
